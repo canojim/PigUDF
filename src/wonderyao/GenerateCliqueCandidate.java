@@ -30,6 +30,7 @@ public class GenerateCliqueCandidate extends EvalFunc<DataBag> {
 			Tuple clique1 = (Tuple)keyClique.get(1);
 			Iterator<Tuple> jt = list.iterator();
 			while(jt.hasNext()){
+				reporter.progress();
 				Tuple clique2 = jt.next();
 				Tuple merged = tupleFactory.newTuple(clique1.size()+1);
 				for(int i=0; i<clique1.size()-1; ++i){
